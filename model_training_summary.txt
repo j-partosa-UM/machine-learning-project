@@ -1,0 +1,33 @@
+
+MODEL TRAINING AND EVALUATION SUMMARY REPORT
+============================================
+
+Dataset: StudentPerformanceFactors.csv
+Target Variable: Exam_Score
+Models Evaluated: Random Forest, Gradient Boosting, Support Vector Machine
+
+BEST MODEL: Support Vector Machine
+Best Test R² Score: 0.7666
+
+DETAILED RESULTS:
+                 Model  Test_RMSE  Test_MAE  Test_R2  Test_MAPE  CV_Score  Training_Time
+         Random Forest   2.254941  1.144369 0.661193   1.656384  6.285067     131.213106
+     Gradient Boosting   1.956514  0.693560 0.744937   0.978427  4.946237    1167.302956
+Support Vector Machine   1.871658  0.417123 0.766582   0.563558  4.629116      96.611054
+
+TRAINING CONFIGURATION:
+- Cross-validation folds: 5
+- Hyperparameter tuning: Grid Search
+- Data split: 70% train, 15% validation, 15% test
+- Feature scaling: StandardScaler applied
+- Random state: 42
+
+FILES GENERATED:
+- Model files: random_forest_model.pkl, gradient_boosting_model.pkl, svm_model.pkl
+- Results: model_comparison_results.csv
+- Detailed results: [model_name]_detailed_results.csv
+
+NEXT STEPS:
+1. Use the best model (Support Vector Machine) for predictions
+2. Consider ensemble methods if needed
+3. Deploy the model for production use
